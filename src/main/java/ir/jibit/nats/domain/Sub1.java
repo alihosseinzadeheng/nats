@@ -10,10 +10,9 @@ import java.time.Instant;
 @Component
 public class Sub1 extends Thread {
     final String subject = "nats.demo.service";
-   // final String subject = ">";
+
     @Autowired
     public Sub1(Connection nats) {
-
         Dispatcher dispatcher = nats.createDispatcher(msg -> {
         });
 

@@ -9,12 +9,11 @@ import java.io.IOException;
 @Component
 public class Pub {
 
-
     public String PublishKon() throws IOException, InterruptedException {
         Connection nats = Nats.connect();
-        String message= "Hello NATS jibit";
+        String message = "Hello NATS jibit";
         nats.publish("nats.demo.service", message.getBytes());
-        System.out.println("Sent: "+ message);
+        System.out.println("Sent: " + message);
         return "OK bood";
     }
 }

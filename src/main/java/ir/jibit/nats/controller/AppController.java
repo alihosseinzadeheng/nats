@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 
 @Controller
 @RequestMapping(value = "/admin")
@@ -23,7 +22,7 @@ public class AppController {
 
     @GetMapping(value = "/pubkon")
     @ResponseBody
-    String pubKon() throws IOException, InterruptedException, TimeoutException {
+    String pubKon() throws IOException, InterruptedException {
         return appService.pubKon();
     }
 }
