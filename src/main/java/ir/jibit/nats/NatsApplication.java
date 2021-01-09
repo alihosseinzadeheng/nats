@@ -17,8 +17,8 @@ public class NatsApplication {
         SpringApplication.run(NatsApplication.class, args);
     }
 
-    @Bean
-    Connection tt() throws IOException, InterruptedException {
+    @Bean("natscn")
+    Connection createConnection() throws IOException, InterruptedException {
         return Nats.connect();
     }
 }

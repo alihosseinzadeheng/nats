@@ -1,11 +1,10 @@
 package ir.jibit.nats.controller;
 
+import ir.jibit.nats.domain.RequestDO;
 import ir.jibit.nats.service.AppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -20,9 +19,9 @@ public class AppController {
         this.appService = appService;
     }
 
-    @GetMapping(value = "/pubkon")
+    @PostMapping(value = "/pubkon")
     @ResponseBody
-    String pubKon() throws IOException, InterruptedException {
-        return appService.pubKon();
+    String pubKon(@RequestBody RequestDO msg) throws IOException, InterruptedException {
+        return appService.pubKon(msg);
     }
 }

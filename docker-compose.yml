@@ -10,4 +10,4 @@ services:
       - 6222:6222
       - 8222:8222
     command:
-      -Vs
+      -V
